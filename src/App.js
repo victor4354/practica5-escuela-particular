@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Button } from '@mui/material';
+import { styled } from '@mui/material/styles';
+
+const PrimeroButton = styled(Button)({
+  borderRadius: '50%', // Circular
+  width: '200px', // Ajusta el tamaño
+  height: '200px', 
+  minWidth: '200px', // Mantener forma circular
+  backgroundColor: '#404040', // Gris oscuro casi negro
+  color: 'white',
+  fontSize: '24px', // Tamaño de texto
+  textTransform: 'none', // Mantener texto original
+  fontWeight: 'normal', // Tipo de letra normal
+  '&:hover': {
+    backgroundColor: '#505050' // Ligero cambio al pasar el mouse
+  }
+});
 
 function App() {
+  const handleClick = () => {
+    alert('Botón presionado');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      height: '100vh',
+      backgroundColor: '#F0F2F5' // Fondo claro
+    }}>
+      <PrimeroButton 
+        variant="contained" 
+        onClick={handleClick}
+      >
+        primero
+      </PrimeroButton>
     </div>
   );
 }
